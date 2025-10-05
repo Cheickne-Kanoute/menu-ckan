@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Qitchen</title>
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="stylesheet" href="../../src/css/components/navbar.css">
+    <link rel="stylesheet" href="../../src/css/pages/reservation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="reservation-wrapper">
+        <!-- Hero Section -->
+        <section class="reservation-hero-section">
+            <div class="reservation-hero-image-container">
+                <img src="/assets/images/reservation-hero.png" alt="Restaurant interior" class="reservation-hero-img">
+            </div>
+            
+            <!-- Navigation will be loaded by navbar.js -->
+            
+            <div class="reservation-hero-gradient"></div>
+            
+            <div class="reservation-hero-text">
+                <h1 class="reservation-hero-title">
+                    <span class="title-line">Réserver</span>
+                    <span class="title-line">une table</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Mobile Menu Overlay will be loaded by navbar.js -->
+
+        <!-- Reservation Content -->
+        <div class="reservation-content">
+            <div class="reservation-content-container">
+                <div class="reservation-form-container">
+                    <!-- Section Header -->
+                    <div class="reservation-section-header">
+                        <div class="section-decoration">
+                            <div class="decoration-icon"></div>
+                            <div class="decoration-line"></div>
+                        </div>
+                        <h2 class="section-title">Réservation</h2>
+                        <div class="section-decoration">
+                            <div class="decoration-line"></div>
+                            <div class="decoration-icon"></div>
+                        </div>
+                    </div>
+
+                    <p class="reservation-description">Sécurisez votre place chez Qitchen, où des sushis exceptionnels et une expérience culinaire remarquable vous attendent.</p>
+
+                    <!-- Reservation Form -->
+                    <form class="reservation-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Nom" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Numéro de téléphone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="number" id="guests" name="guests" placeholder="Invités" min="1" max="12" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="reservation-button">
+                            <span class="button-text">Réserver</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="reservation-footer">
+                <div class="footer-content">
+                    <p class="footer-text">© Site Réalisé par CKAN</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../src/js/components/navbar.js"></script>
+    <script src="../../src/js/components/reservation.js"></script>
+</body>
+</html>

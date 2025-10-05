@@ -1,0 +1,13 @@
+{
+  "name": "ckan-menu",
+  "version": "1.0.0",
+  "description": "CKAN Menu Restaurant Website",
+  "main": "src/js/server.js",
+  "scripts": {
+    "start": "node src/js/server.js",
+    "dev": "node src/js/server.js"
+  },
+  "keywords": ["restaurant", "sushi", "website"],
+  "author": "CKAN",
+  "license": "MIT"
+}

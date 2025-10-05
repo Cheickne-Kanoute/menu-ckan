@@ -1,0 +1,27 @@
+[build]
+  publish = "public"
+
+[[redirects]]
+  from = "/menu"
+  to = "/pages/menu.html"
+  status = 200
+
+[[redirects]]
+  from = "/reservation"
+  to = "/pages/reservation.html"
+  status = 200
+
+[[redirects]]
+  from = "/a-propos"
+  to = "/pages/a-propos.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/pages/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
