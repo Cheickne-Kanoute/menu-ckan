@@ -1,0 +1,9 @@
+{
+  "name": "ckan-menu-static",
+  "version": "1.0.0",
+  "description": "CKAN Menu Restaurant Website - Static Build",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Static site - no server required'"
+  }
+}
