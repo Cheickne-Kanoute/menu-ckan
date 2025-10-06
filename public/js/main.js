@@ -197,22 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type();
     }
 
-    // Animation de la navbar au scroll
-    const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            navbar.style.transform = 'translateY(-100%)';
-            navbar.style.transition = 'transform 0.3s ease';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollY = currentScrollY;
-    });
+    // Navbar scroll behavior removed - navbar now stays visible
 
     // Effet de particules flottantes (optionnel)
     function createFloatingParticles() {

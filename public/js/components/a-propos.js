@@ -157,29 +157,7 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Handle scroll events
-let lastScrollTop = 0;
-let isNavbarHidden = false;
-
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add scroll-based animations if needed
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down - hide navbar
-            navbar.style.transform = 'translateY(-100%)';
-            isNavbarHidden = true;
-        } else if (scrollTop <= lastScrollTop && isNavbarHidden) {
-            // Scrolling up - show navbar by removing inline style
-            navbar.style.transform = '';
-            isNavbarHidden = false;
-        }
-    }
-    
-    lastScrollTop = scrollTop;
-});
+// Navbar scroll behavior removed - navbar now stays visible
 
 // Preload images for better performance
 function preloadImages() {
