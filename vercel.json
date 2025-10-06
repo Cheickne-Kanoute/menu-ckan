@@ -1,9 +1,9 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/menu", "destination": "/pages/menu.html" },
-    { "source": "/reservation", "destination": "/pages/reservation.html" },
-    { "source": "/a-propos", "destination": "/pages/a-propos.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" }
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/reservation", "destination": "/reservation.html" },
+    { "source": "/a-propos", "destination": "/a-propos.html" },
+    { "source": "/contact", "destination": "/contact.html" }
   ]
 }
