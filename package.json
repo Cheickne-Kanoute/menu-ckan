@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "build": "copyfiles --up 1 \"src/**/*\" public",
+    "build": "ncp src/css public/assets/css && ncp src/js public/assets/js && ncp src/data public/data",
     "dev": "echo \"Use a local server like live-server or http-server\""
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1" 
+    "ncp": "^2.0.0"
   }
 }
