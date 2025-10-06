@@ -409,9 +409,71 @@
 }
 
 
+/* Samsung S8 and similar devices (360px width) */
+@media (max-width: 360px) {
+    .navbar {
+        top: 20px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        transform: none;
+        min-width: auto;
+    }
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+        padding: 4px;
+    }
+    .menu-line {
+        width: 16px;
+    }
+    .nav-item{
+        font-size: 11px;
+        letter-spacing: 0.2px;
+    }
+}
+
+/* Galaxy Z Fold 5 and similar foldable devices */
+@media (max-width: 393px) and (min-width: 361px) {
+    .navbar {
+        top: 22px;
+        left: 14px;
+        right: 14px;
+        width: auto;
+        transform: none;
+        min-width: auto;
+    }
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+}
+
 /* Small Mobile Styles */
 @media (max-width: 480px) {
+    .logo h1{
+        font-size: 1.5rem;
+    }
     .navbar {
+        top: 24px;
+        left: 50%;
+        transform: translate(-50%);
+        min-width: calc(100% - 48px);
+    }
+    #nav-menu, #nav-about{
         display: none;
+    }
+    .navbar-container{
+        justify-content: space-between;
+        gap: 0;
+    }
+    .mobile-menu-item{
+        font-size: 32px;
+    }
+    #nav-reservation {
+        background: rgba(24, 24, 24, 0.5);
+        border: 1px solid rgba(239, 231, 210, 0.15);
     }
 }
