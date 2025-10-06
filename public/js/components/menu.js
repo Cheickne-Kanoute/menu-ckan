@@ -4,7 +4,7 @@ let menuData = null;
 // Load menu data from JSON file
 async function loadMenuData() {
     try {
-        const response = await fetch('/data/menu-data.json');
+        const response = await fetch('../data/menu-data.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -72,7 +72,7 @@ function generateMenuItems(items) {
             <div class="menu-item-image">
                 <img src="${item.image}" alt="${item.name}" class="item-img">
                 ${item.modelUrl ? `<div class="ar-icon" data-model-url="${item.modelUrl}" data-item-name="${item.name}">
-                    <img src="/assets/icons/view_in_ar_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="AR" class="ar-icon-svg">
+                    <img src="../assets/icons/view_in_ar_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="AR" class="ar-icon-svg">
                 </div>` : ''}
             </div>
             <div class="menu-item-content">

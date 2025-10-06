@@ -38,7 +38,7 @@ class NavbarComponent {
 
     async loadNavbar() {
         try {
-            const response = await fetch('/pages/navbar.html');
+            const response = await fetch('../pages/navbar.html');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -71,7 +71,7 @@ class NavbarComponent {
 
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = '../../src/css/components/navbar.css';
+        link.href = '/css/components/navbar.css';
         link.type = 'text/css';
         document.head.appendChild(link);
     }
