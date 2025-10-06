@@ -1,5 +1,5 @@
-/menu /pages/menu.html 200
-/reservation /pages/reservation.html 200
-/a-propos /pages/a-propos.html 200
-/contact /pages/contact.html 200
+/menu /menu.html 200
+/reservation /reservation.html 200
+/a-propos /a-propos.html 200
+/contact /contact.html 200
 / /index.html 200
