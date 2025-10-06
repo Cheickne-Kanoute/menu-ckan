@@ -2,25 +2,10 @@
   "buildCommand": "echo 'No build step required'",
   "outputDirectory": "public",
   "rewrites": [
-    {
-      "source": "/menu",
-      "destination": "/pages/menu.html"
-    },
-    {
-      "source": "/reservation",
-      "destination": "/pages/reservation.html"
-    },
-    {
-      "source": "/a-propos",
-      "destination": "/pages/a-propos.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/pages/contact.html"
-    },
-    {
-      "source": "/",
-      "destination": "/pages/index.html"
-    }
+    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/menu", "destination": "/pages/menu.html" },
+    { "source": "/reservation", "destination": "/pages/reservation.html" },
+    { "source": "/a-propos", "destination": "/pages/a-propos.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" }
   ]
 }
