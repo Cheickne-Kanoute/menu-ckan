@@ -53,8 +53,8 @@ CKAN MENU/
 │       └── menu-data.json      # Données du menu (JSON)
 ├── 📁 config/                   # Configuration déploiement
 │   ├── netlify.toml            # Configuration Netlify
-│   ├── vercel.json             # Configuration Vercel
 │   └── _redirects              # Redirections URL
+├── 📄 vercel.json              # Configuration Vercel (racine)
 ├── 📄 package.json             # Configuration du projet
 └── 📄 README.md                # Ce fichier
 ```
@@ -173,7 +173,7 @@ Le projet est optimisé pour le déploiement statique sur plusieurs plateformes 
 
 ### Vercel
 1. **Connecter le repository** à Vercel
-2. **Configuration** : `config/vercel.json` gère le routage automatiquement
+2. **Configuration** : `vercel.json` (racine) gère le routage automatiquement
 3. **Dossier de sortie** : `public`
 4. **Performance** : CDN global, HTTPS automatique
 
