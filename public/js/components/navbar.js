@@ -38,7 +38,7 @@ class NavbarComponent {
 
     async loadNavbar() {
         try {
-            const response = await fetch('navbar.html');
+            const response = await fetch('/pages/navbar.html');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
