@@ -4,7 +4,7 @@ let menuData = null;
 // Load menu data from JSON file
 async function loadMenuData() {
     try {
-        const response = await fetch('/src/data/menu-data.json');
+        const response = await fetch('/data/menu-data.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
