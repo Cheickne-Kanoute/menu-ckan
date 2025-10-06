@@ -1,12 +1,9 @@
 {
-  "name": "ckan-menu",
-  "version": "1.0.0",
-  "description": "CKAN Menu Restaurant Website",
   "scripts": {
-    "build": "echo 'No build step required for static site'",
-    "dev": "echo 'Use a local server like live-server or http-server'"
+    "build": "copyfiles --up 1 \"src/**/*\" public",
+    "dev": "echo \"Use a local server like live-server or http-server\""
   },
-  "keywords": ["restaurant", "sushi", "website"],
-  "author": "CKAN",
-  "license": "MIT"
+  "devDependencies": {
+    "copyfiles": "^2.4.1" 
+  }
 }
