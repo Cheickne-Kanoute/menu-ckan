@@ -1,6 +1,6 @@
 # CKAN MENU - Site Web de Restaurant
 
-Un site web moderne de restaurant de sushi construit avec HTML, CSS et JavaScript, utilisant un système de menu dynamique basé sur JSON.
+Un site web moderne de restaurant de sushi construit avec HTML, CSS et JavaScript, optimisé pour le déploiement statique avec un système de menu dynamique basé sur JSON.
 
 ## 🍣 À propos du projet
 
@@ -9,6 +9,8 @@ CKAN MENU est un site web complet pour un restaurant de sushi avec :
 - **Design moderne** : Interface élégante et responsive
 - **Animations fluides** : Transitions optimisées pour une expérience utilisateur premium
 - **Système extensible** : Facile d'ajouter de nouveaux plats et catégories
+- **Déploiement statique** : Optimisé pour Netlify, Vercel et autres plateformes
+- **Réalité augmentée** : Support des modèles 3D avec Model Viewer
 
 ## 📁 Structure du projet
 
@@ -41,7 +43,6 @@ CKAN MENU/
 │   │       └── reservation.css # Styles page réservation
 │   ├── 📁 js/                   # Scripts JavaScript
 │   │   ├── main.js             # Script principal
-│   │   ├── server.js           # Configuration serveur
 │   │   └── components/
 │   │       ├── navbar.js       # Fonctionnalité navigation
 │   │       ├── a-propos.js     # Scripts page à propos
@@ -50,21 +51,19 @@ CKAN MENU/
 │   │       └── reservation.js  # Scripts page réservation
 │   └── 📁 data/                 # Données
 │       └── menu-data.json      # Données du menu (JSON)
-├── 📁 config/                   # Configuration
+├── 📁 config/                   # Configuration déploiement
 │   ├── netlify.toml            # Configuration Netlify
 │   ├── vercel.json             # Configuration Vercel
 │   └── _redirects              # Redirections URL
-├── 📄 package.json             # Dépendances du projet
-├── 📄 start.bat                # Script de démarrage Windows
-├── 📄 start.sh                 # Script de démarrage Linux/Mac
+├── 📄 package.json             # Configuration du projet
 └── 📄 README.md                # Ce fichier
 ```
 
 ## 🚀 Démarrage rapide
 
 ### Prérequis
-- Node.js (version 14 ou supérieure)
 - Un navigateur web moderne
+- Un serveur HTTP local (optionnel pour le développement)
 
 ### Installation
 
@@ -74,29 +73,24 @@ CKAN MENU/
    cd ckan-menu
    ```
 
-2. **Installer les dépendances** :
+2. **Développement local** :
    ```bash
-   npm install
+   # Option 1: Serveur HTTP simple
+   npx live-server public
+   
+   # Option 2: Serveur HTTP avec Python
+   cd public && python -m http.server 8000
+   
+   # Option 3: Serveur HTTP avec Node.js
+   npx http-server public
    ```
 
-3. **Démarrer le serveur de développement** :
-   ```bash
-   # Windows
-   start.bat
-   
-   # Linux/Mac
-   ./start.sh
-   
-   # Ou manuellement
-   npm start
-   ```
-
-4. **Ouvrir dans le navigateur** :
-   - **Accueil** : http://localhost:3000
-   - **Menu** : http://localhost:3000/menu
-   - **À propos** : http://localhost:3000/a-propos
-   - **Contact** : http://localhost:3000/contact
-   - **Réservation** : http://localhost:3000/reservation
+3. **Ouvrir dans le navigateur** :
+   - **Accueil** : http://localhost:8080 (ou port affiché)
+   - **Menu** : http://localhost:8080/menu
+   - **À propos** : http://localhost:8080/a-propos
+   - **Contact** : http://localhost:8080/contact
+   - **Réservation** : http://localhost:8080/reservation
 
 ## ✨ Fonctionnalités
 
@@ -116,7 +110,9 @@ CKAN MENU/
 - **Architecture modulaire** : Code organisé par composants
 - **CSS moderne** : Flexbox, Grid, animations CSS3
 - **JavaScript ES6+** : Async/await, modules, gestion d'erreurs
-- **Déploiement multi-plateforme** : Netlify, Vercel, serveurs statiques
+- **Déploiement statique** : Optimisé pour Netlify, Vercel, GitHub Pages
+- **Réalité augmentée** : Support des modèles 3D avec Model Viewer
+- **Performance** : Chargement optimisé, images compressées
 
 ## 📝 Gestion du menu
 
@@ -159,28 +155,38 @@ Les images sont organisées dans `public/assets/images/` :
 - **HTML5** : Structure sémantique
 - **CSS3** : Styles modernes, animations, responsive design
 - **JavaScript ES6+** : Fonctionnalités dynamiques
-- **Node.js** : Serveur de développement
 - **JSON** : Stockage des données du menu
+- **Model Viewer** : Affichage des modèles 3D et réalité augmentée
+- **Fetch API** : Chargement asynchrone des données
 
 ## 🚀 Déploiement
 
-Le projet est configuré pour le déploiement sur plusieurs plateformes :
+Le projet est optimisé pour le déploiement statique sur plusieurs plateformes :
 
-### Netlify
-1. Connecter le repository à Netlify
-2. Commande de build : `echo "Aucune compilation requise"`
-3. Dossier de publication : `public`
-4. Les fichiers `netlify.toml` et `public/_redirects` gèrent le routage
+### Netlify (Recommandé)
+1. **Connecter le repository** à Netlify
+2. **Configuration automatique** :
+   - Dossier de publication : `public`
+   - Commande de build : `echo "No build step required"`
+3. **Routage** : Géré par `config/netlify.toml` et `public/_redirects`
+4. **URLs propres** : `/menu` → `/pages/menu.html`
 
 ### Vercel
-1. Connecter le repository à Vercel
-2. La configuration `vercel.json` gère le routage automatiquement
-3. Dossier de sortie : `public`
+1. **Connecter le repository** à Vercel
+2. **Configuration** : `config/vercel.json` gère le routage automatiquement
+3. **Dossier de sortie** : `public`
+4. **Performance** : CDN global, HTTPS automatique
+
+### GitHub Pages
+1. **Activer GitHub Pages** dans les paramètres du repository
+2. **Dossier source** : `public`
+3. **URL** : `https://username.github.io/repository-name`
 
 ### Déploiement manuel
-Uploader simplement le contenu du dossier `public` sur tout serveur web supportant :
-- Service de fichiers statiques
-- Réécriture d'URL (pour les URLs propres)
+Uploader le contenu du dossier `public` sur tout serveur web supportant :
+- **Fichiers statiques** : HTML, CSS, JS, images
+- **Réécriture d'URL** : Pour les URLs propres (`/menu` au lieu de `/menu.html`)
+- **HTTPS** : Recommandé pour la sécurité
 
 ## 📚 Développement
 
@@ -193,9 +199,11 @@ Uploader simplement le contenu du dossier `public` sur tout serveur web supporta
 
 ### Bonnes pratiques
 - **Modularité** : Un fichier CSS/JS par page/composant
-- **Performance** : Images optimisées, CSS minifié
+- **Performance** : Images optimisées, chargement asynchrone
 - **Maintenabilité** : Code commenté, structure claire
 - **Extensibilité** : Système JSON pour le menu
+- **Déploiement** : Configuration multi-plateforme
+- **Accessibilité** : Navigation au clavier, lecteurs d'écran
 
 ## 🤝 Contribution
 
@@ -215,6 +223,27 @@ Pour toute question ou problème :
 - Ouvrir une issue sur GitHub
 - Contacter l'équipe de développement
 
+## 🎯 Fonctionnalités avancées
+
+### Réalité augmentée
+- **Modèles 3D** : Support des fichiers GLB pour l'affichage 3D
+- **Model Viewer** : Intégration Google Model Viewer pour la RA
+- **Interactivité** : Rotation, zoom, et visualisation des plats en 3D
+
+### Performance
+- **Chargement asynchrone** : Données du menu chargées dynamiquement
+- **Images optimisées** : Compression et formats modernes
+- **Animations fluides** : 60 FPS avec CSS3 et JavaScript
+- **Responsive design** : Adaptation mobile-first
+
+### SEO et accessibilité
+- **URLs propres** : `/menu` au lieu de `/menu.html`
+- **Structure sémantique** : HTML5 avec balises appropriées
+- **Navigation clavier** : Support complet de la navigation au clavier
+- **Lecteurs d'écran** : Compatible avec les technologies d'assistance
+
 ---
 
 **CKAN MENU** - Site web moderne pour restaurant de sushi 🍣
+
+*Optimisé pour le déploiement statique avec support de la réalité augmentée*
