@@ -1,9 +1,12 @@
 {
+  "name": "ckan-menu",
+  "version": "1.0.0",
+  "description": "CKAN Menu Restaurant Website",
   "scripts": {
-    "build": "ncp src/css public/assets/css && ncp src/js public/assets/js && ncp src/data public/data",
-    "dev": "echo \"Use a local server like live-server or http-server\""
+    "build": "echo 'No build step required for static site'",
+    "dev": "echo 'Use a local server like live-server or http-server'"
   },
-  "devDependencies": {
-    "ncp": "^2.0.0"
-  }
+  "keywords": ["restaurant", "sushi", "website"],
+  "author": "CKAN",
+  "license": "MIT"
 }
