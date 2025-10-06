@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/", "destination": "/index.html" },
     { "source": "/menu", "destination": "/pages/menu.html" },
     { "source": "/reservation", "destination": "/pages/reservation.html" },
     { "source": "/a-propos", "destination": "/pages/a-propos.html" },
