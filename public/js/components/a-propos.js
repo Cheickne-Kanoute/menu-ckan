@@ -159,6 +159,8 @@ window.addEventListener('resize', function() {
 
 // Handle scroll events
 let lastScrollTop = 0;
+let isNavbarHidden = false;
+
 window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
@@ -166,11 +168,13 @@ window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
+            // Scrolling down - hide navbar
             navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
+            isNavbarHidden = true;
+        } else if (scrollTop <= lastScrollTop && isNavbarHidden) {
+            // Scrolling up - show navbar by removing inline style
+            navbar.style.transform = '';
+            isNavbarHidden = false;
         }
     }
     

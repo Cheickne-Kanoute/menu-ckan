@@ -106,14 +106,7 @@ body {
     margin: 0;
 }
 
-/* About Navbar styles - ensure proper positioning */
-.about-wrapper .navbar {
-    position: fixed;
-    top: 72px;
-    left: 72px;
-    z-index: 10;
-    transform: none;
-}
+/* About Navbar styles removed - using navbar.css instead */
 
 /* About Content */
 .about-content {
@@ -131,8 +124,6 @@ body {
     min-width: 400px;
     padding: 0;
     background: transparent;
-    position: relative;
-    z-index: 1;
 }
 
 .about-content::-webkit-scrollbar {
