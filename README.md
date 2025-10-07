@@ -16,7 +16,7 @@ CKAN MENU est un site web complet pour un restaurant de sushi avec :
 
 ```
 CKAN MENU/
-├── 📁 public/                    # Fichiers publics
+├── 📁 public/                    # Site web complet (espace de travail)
 │   ├── 📁 assets/               # Ressources statiques
 │   │   └── 📁 images/           # Images organisées par catégorie
 │   │       ├── 📁 menu/         # Images des plats (maki, uramaki, special, sashimi)
@@ -24,14 +24,8 @@ CKAN MENU/
 │   │       ├── 📁 cards/        # Images des cartes
 │   │       ├── 📁 about/        # Images page à propos
 │   │       └── 📁 icons/        # Icônes et logos
-│   └── 📁 pages/                # Pages HTML
-│       ├── index.html           # Page d'accueil
-│       ├── a-propos.html       # Page à propos
-│       ├── contact.html         # Page contact
-│       ├── menu.html            # Page menu (dynamique)
-│       ├── reservation.html     # Page réservation
+│   └── 📁 pages/                # Composants
 │       └── navbar.html          # Composant navigation
-├── 📁 src/                      # Code source
 │   ├── 📁 css/                  # Styles CSS
 │   │   ├── main.css            # Styles principaux
 │   │   ├── components/
@@ -49,8 +43,13 @@ CKAN MENU/
 │   │       ├── contact.js      # Scripts page contact
 │   │       ├── menu.js         # Scripts page menu (dynamique)
 │   │       └── reservation.js  # Scripts page réservation
-│   └── 📁 data/                 # Données
-│       └── menu-data.json      # Données du menu (JSON)
+│   ├── 📁 data/                 # Données
+│   │   └── menu-data.json      # Données du menu (JSON)
+│   ├── index.html              # Page d'accueil
+│   ├── a-propos.html           # Page à propos
+│   ├── contact.html            # Page contact
+│   ├── menu.html               # Page menu (dynamique)
+│   └── reservation.html        # Page réservation
 ├── 📁 config/                   # Configuration déploiement
 │   ├── netlify.toml            # Configuration Netlify
 │   └── _redirects              # Redirections URL
@@ -95,7 +94,7 @@ CKAN MENU/
 ## ✨ Fonctionnalités
 
 ### 🍣 Système de menu dynamique
-- **Chargement JSON** : Les plats sont chargés depuis `src/data/menu-data.json`
+- **Chargement JSON** : Les plats sont chargés depuis `public/data/menu-data.json`
 - **Filtrage par catégories** : Navigation fluide entre les catégories
 - **Ajout facile** : Ajouter un nouveau plat = modifier le JSON
 - **Images optimisées** : Support des images locales et externes
@@ -118,7 +117,7 @@ CKAN MENU/
 
 ### Ajouter un nouveau plat
 
-1. **Ouvrir** `src/data/menu-data.json`
+1. **Ouvrir** `public/data/menu-data.json`
 2. **Ajouter** un nouvel objet dans la catégorie souhaitée :
 
 ```json
@@ -191,11 +190,11 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 ## 📚 Développement
 
 ### Structure du code
-- **Pages HTML** : `public/pages/`
-- **Styles CSS** : `src/css/` avec fichiers séparés par composants et pages
-- **Scripts JS** : `src/js/` avec organisation par composants
+- **Pages HTML** : `public/` (racine)
+- **Styles CSS** : `public/css/` avec fichiers séparés par composants et pages
+- **Scripts JS** : `public/js/` avec organisation par composants
 - **Assets** : `public/assets/`
-- **Données** : `src/data/`
+- **Données** : `public/data/`
 
 ### Bonnes pratiques
 - **Modularité** : Un fichier CSS/JS par page/composant
