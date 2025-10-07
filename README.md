@@ -1,16 +1,17 @@
-# CKAN MENU - Site Web de Restaurant
+# CKAN MENU - Site Web de Restaurant Moderne
 
-Un site web moderne de restaurant de sushi construit avec HTML, CSS et JavaScript, optimisé pour le déploiement statique avec un système de menu dynamique basé sur JSON.
+Un site web complet de restaurant construit avec HTML5, CSS3 et JavaScript ES6+, optimisé pour le déploiement statique avec un système de menu dynamique et des fonctionnalités avancées.
 
-## 🍣 À propos du projet
+## 🍽️ À propos du projet
 
-CKAN MENU est un site web complet pour un restaurant de sushi avec :
-- **Menu dynamique** : Chargement des plats depuis un fichier JSON
-- **Design moderne** : Interface élégante et responsive
-- **Animations fluides** : Transitions optimisées pour une expérience utilisateur premium
-- **Système extensible** : Facile d'ajouter de nouveaux plats et catégories
-- **Déploiement statique** : Optimisé pour Netlify, Vercel et autres plateformes
-- **Réalité augmentée** : Support des modèles 3D avec Model Viewer
+CKAN MENU est un site web professionnel pour restaurant avec :
+- **Menu dynamique** : Chargement des plats depuis JSON avec filtres interactifs
+- **Design moderne** : Interface élégante, responsive et accessible
+- **Animations fluides** : Transitions CSS3 et JavaScript pour une UX premium
+- **Réalité augmentée** : Support des modèles 3D avec Google Model Viewer
+- **Architecture simplifiée** : Workflow unifié avec un seul dossier de travail
+- **Déploiement multi-plateforme** : Optimisé pour Vercel, Netlify et GitHub Pages
+- **Performance optimisée** : Chargement rapide et animations 60 FPS
 
 ## 📁 Structure du projet
 
@@ -61,7 +62,8 @@ CKAN MENU/
 ## 🚀 Démarrage rapide
 
 ### Prérequis
-- Un navigateur web moderne
+- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
+- Git (pour cloner le repository)
 - Un serveur HTTP local (optionnel pour le développement)
 
 ### Installation
@@ -74,7 +76,7 @@ CKAN MENU/
 
 2. **Développement local** :
    ```bash
-   # Option 1: Serveur HTTP simple
+   # Option 1: Serveur HTTP avec live-server (recommandé)
    npx live-server public
    
    # Option 2: Serveur HTTP avec Python
@@ -82,6 +84,9 @@ CKAN MENU/
    
    # Option 3: Serveur HTTP avec Node.js
    npx http-server public
+   
+   # Option 4: Serveur HTTP avec PHP
+   cd public && php -S localhost:8000
    ```
 
 3. **Ouvrir dans le navigateur** :
@@ -91,27 +96,43 @@ CKAN MENU/
    - **Contact** : http://localhost:8080/contact
    - **Réservation** : http://localhost:8080/reservation
 
+### 🎯 Workflow de développement
+
+**Structure simplifiée** - Tout se trouve dans le dossier `public/` :
+1. **Modifier** directement dans `public/`
+2. **Tester** localement avec un serveur HTTP
+3. **Commiter** : `git add . && git commit -m "Description"`
+4. **Déployer** : `git push` (déploiement automatique)
+
 ## ✨ Fonctionnalités
 
-### 🍣 Système de menu dynamique
+### 🍽️ Système de menu dynamique
 - **Chargement JSON** : Les plats sont chargés depuis `public/data/menu-data.json`
-- **Filtrage par catégories** : Navigation fluide entre les catégories
+- **Filtrage par catégories** : Navigation fluide entre les catégories (7 catégories disponibles)
 - **Ajout facile** : Ajouter un nouveau plat = modifier le JSON
 - **Images optimisées** : Support des images locales et externes
+- **Prix en FCFA** : Adaptation locale pour l'Afrique de l'Ouest
 
 ### 🎨 Design et UX
 - **Responsive** : Adaptation mobile, tablette et desktop
-- **Animations modernes** : Transitions fluides et élégantes
-- **Performance** : Chargement rapide et optimisé
-- **Accessibilité** : Navigation au clavier et lecteurs d'écran
+- **Animations modernes** : Transitions CSS3 et JavaScript fluides
+- **Performance** : Chargement rapide et optimisé (60 FPS)
+- **Accessibilité** : Navigation au clavier, ARIA labels, lecteurs d'écran
+- **Thème sombre** : Palette de couleurs élégante (#0A0B0A, #EFE7D2)
+
+### 🥽 Réalité augmentée
+- **Model Viewer** : Intégration Google Model Viewer
+- **Modèles 3D** : Support des fichiers GLB pour AR
+- **Multi-plateforme** : iOS, Android, WebXR
+- **Interface dédiée** : Modal AR avec contrôles intuitifs
 
 ### 🔧 Fonctionnalités techniques
 - **Architecture modulaire** : Code organisé par composants
-- **CSS moderne** : Flexbox, Grid, animations CSS3
-- **JavaScript ES6+** : Async/await, modules, gestion d'erreurs
-- **Déploiement statique** : Optimisé pour Netlify, Vercel, GitHub Pages
-- **Réalité augmentée** : Support des modèles 3D avec Model Viewer
-- **Performance** : Chargement optimisé, images compressées
+- **CSS moderne** : Flexbox, Grid, animations CSS3, variables CSS
+- **JavaScript ES6+** : Async/await, modules, Fetch API, Intersection Observer
+- **Déploiement statique** : Optimisé pour Vercel, Netlify, GitHub Pages
+- **Performance** : Chargement asynchrone, images optimisées
+- **SEO friendly** : URLs propres, meta tags, structure sémantique
 
 ## 📝 Gestion du menu
 
@@ -125,9 +146,10 @@ CKAN MENU/
   "id": "nouveau-plat",
   "name": "Nom du plat",
   "price": "5000 FCFA",
-  "description": "Description du plat",
-  "image": "chemin/vers/image.jpg",
-  "hasLeaf": true
+  "description": "Description détaillée du plat",
+  "image": "/assets/images/menu/categorie/nom-image.jpg",
+  "hasLeaf": true,
+  "modelUrl": "/assets/models/modele-3d.glb"
 }
 ```
 
@@ -138,7 +160,14 @@ CKAN MENU/
   "id": "nouvelle-categorie",
   "name": "Nom de la catégorie",
   "items": [
-    // ... plats de la catégorie
+    {
+      "id": "plat-1",
+      "name": "Premier plat",
+      "price": "3000 FCFA",
+      "description": "Description du plat",
+      "image": "/assets/images/menu/categorie/plat1.jpg",
+      "hasLeaf": false
+    }
   ]
 }
 ```
@@ -148,33 +177,58 @@ CKAN MENU/
 Les images sont organisées dans `public/assets/images/` :
 - **Menu** : `menu/maki/`, `menu/uramaki/`, `menu/special/`, `menu/sashimi/`
 - **Pages** : `hero/`, `cards/`, `about/`, `icons/`
+- **Modèles 3D** : `models/` (fichiers GLB pour AR)
+
+### Catégories disponibles
+
+Le menu comprend 7 catégories :
+1. **Burgers** (4 plats)
+2. **Grillades** (4 plats)
+3. **Spécialités Locales** (4 plats)
+4. **Desserts** (4 plats)
+5. **Pizzas** (4 plats)
+6. **Pâtes** (4 plats)
+7. **Boissons** (4 plats)
 
 ## 🛠 Technologies utilisées
 
-- **HTML5** : Structure sémantique
-- **CSS3** : Styles modernes, animations, responsive design
-- **JavaScript ES6+** : Fonctionnalités dynamiques
-- **JSON** : Stockage des données du menu
-- **Model Viewer** : Affichage des modèles 3D et réalité augmentée
+### Frontend
+- **HTML5** : Structure sémantique avec balises modernes
+- **CSS3** : Flexbox, Grid, animations, variables CSS, responsive design
+- **JavaScript ES6+** : Async/await, modules, Fetch API, Intersection Observer
+- **JSON** : Stockage des données du menu (28 plats, 7 catégories)
+
+### Fonctionnalités avancées
+- **Google Model Viewer** : Affichage des modèles 3D et réalité augmentée
 - **Fetch API** : Chargement asynchrone des données
+- **Intersection Observer** : Animations au scroll
+- **CSS Grid & Flexbox** : Layouts modernes et responsive
+
+### Déploiement
+- **Vercel** : Déploiement automatique avec configuration optimisée
+- **Netlify** : Alternative de déploiement avec redirections
+- **GitHub Pages** : Hébergement statique gratuit
+- **Git** : Versioning et déploiement continu
 
 ## 🚀 Déploiement
 
 Le projet est optimisé pour le déploiement statique sur plusieurs plateformes :
 
-### Netlify (Recommandé)
+### Vercel (Recommandé) ⭐
+1. **Connecter le repository** à Vercel
+2. **Configuration automatique** :
+   - Dossier de publication : `public`
+   - Commande de build : `echo "No build step required"`
+3. **Routage** : Géré par `vercel.json` (URLs propres automatiques)
+4. **Performance** : CDN global, HTTPS automatique, déploiement instantané
+
+### Netlify
 1. **Connecter le repository** à Netlify
 2. **Configuration automatique** :
    - Dossier de publication : `public`
    - Commande de build : `echo "No build step required"`
 3. **Routage** : Géré par `config/netlify.toml` et `public/_redirects`
-4. **URLs propres** : `/menu` → `/pages/menu.html`
-
-### Vercel
-1. **Connecter le repository** à Vercel
-2. **Configuration** : `vercel.json` (racine) gère le routage automatiquement
-3. **Dossier de sortie** : `public`
-4. **Performance** : CDN global, HTTPS automatique
+4. **URLs propres** : `/menu` → `/menu.html`
 
 ### GitHub Pages
 1. **Activer GitHub Pages** dans les paramètres du repository
@@ -187,22 +241,44 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 - **Réécriture d'URL** : Pour les URLs propres (`/menu` au lieu de `/menu.html`)
 - **HTTPS** : Recommandé pour la sécurité
 
+### 🔄 Workflow de déploiement automatique
+
+1. **Modifier** les fichiers dans `public/`
+2. **Commiter** : `git add . && git commit -m "Description"`
+3. **Push** : `git push origin main`
+4. **Déploiement automatique** : Vercel/Netlify détecte les changements
+5. **Site mis à jour** : En quelques secondes
+
 ## 📚 Développement
 
 ### Structure du code
-- **Pages HTML** : `public/` (racine)
+- **Pages HTML** : `public/` (racine) - Toutes les pages principales
 - **Styles CSS** : `public/css/` avec fichiers séparés par composants et pages
-- **Scripts JS** : `public/js/` avec organisation par composants
-- **Assets** : `public/assets/`
-- **Données** : `public/data/`
+- **Scripts JS** : `public/js/` avec organisation modulaire par composants
+- **Assets** : `public/assets/` - Images, icônes, modèles 3D
+- **Données** : `public/data/` - Fichier JSON du menu
+
+### 🎯 Workflow de développement simplifié
+
+**Architecture unifiée** - Tout dans `public/` :
+```
+public/                    # VOTRE ESPACE DE TRAVAIL UNIQUE
+├── index.html            # Modifier directement
+├── menu.html            # Modifier directement
+├── css/                 # Styles organisés
+├── js/                  # Scripts modulaires
+├── data/                # Données JSON
+└── assets/              # Images et ressources
+```
 
 ### Bonnes pratiques
 - **Modularité** : Un fichier CSS/JS par page/composant
-- **Performance** : Images optimisées, chargement asynchrone
-- **Maintenabilité** : Code commenté, structure claire
-- **Extensibilité** : Système JSON pour le menu
-- **Déploiement** : Configuration multi-plateforme
-- **Accessibilité** : Navigation au clavier, lecteurs d'écran
+- **Performance** : Images optimisées, chargement asynchrone, animations 60 FPS
+- **Maintenabilité** : Code commenté, structure claire, architecture simplifiée
+- **Extensibilité** : Système JSON flexible pour le menu
+- **Déploiement** : Configuration multi-plateforme (Vercel, Netlify, GitHub Pages)
+- **Accessibilité** : Navigation au clavier, ARIA labels, lecteurs d'écran
+- **Responsive** : Design mobile-first avec breakpoints optimisés
 
 ## 🤝 Contribution
 
@@ -224,25 +300,45 @@ Pour toute question ou problème :
 
 ## 🎯 Fonctionnalités avancées
 
-### Réalité augmentée
+### 🥽 Réalité augmentée
 - **Modèles 3D** : Support des fichiers GLB pour l'affichage 3D
 - **Model Viewer** : Intégration Google Model Viewer pour la RA
 - **Interactivité** : Rotation, zoom, et visualisation des plats en 3D
+- **Multi-plateforme** : iOS, Android, WebXR
 
-### Performance
+### ⚡ Performance
 - **Chargement asynchrone** : Données du menu chargées dynamiquement
 - **Images optimisées** : Compression et formats modernes
 - **Animations fluides** : 60 FPS avec CSS3 et JavaScript
 - **Responsive design** : Adaptation mobile-first
+- **Lazy loading** : Chargement optimisé des ressources
 
-### SEO et accessibilité
+### 🔍 SEO et accessibilité
 - **URLs propres** : `/menu` au lieu de `/menu.html`
 - **Structure sémantique** : HTML5 avec balises appropriées
 - **Navigation clavier** : Support complet de la navigation au clavier
 - **Lecteurs d'écran** : Compatible avec les technologies d'assistance
+- **Meta tags** : Optimisation pour les moteurs de recherche
+
+### 🎨 Design system
+- **Palette de couleurs** : Thème sombre élégant (#0A0B0A, #EFE7D2)
+- **Typographie** : Google Fonts (Forum, Inter)
+- **Animations** : Transitions CSS3 et JavaScript fluides
+- **Responsive** : Breakpoints optimisés pour tous les écrans
 
 ---
 
-**CKAN MENU** - Site web moderne pour restaurant de sushi 🍣
+## 📊 Statistiques du projet
 
-*Optimisé pour le déploiement statique avec support de la réalité augmentée*
+- **📄 Pages** : 5 pages principales
+- **🍽️ Plats** : 28 plats dans 7 catégories
+- **🎨 Styles** : 4 fichiers CSS modulaires
+- **⚡ Scripts** : 5 composants JavaScript
+- **🖼️ Images** : Organisation par catégories
+- **🥽 AR** : Support modèles 3D GLB
+
+---
+
+**CKAN MENU** - Site web moderne pour restaurant 🍽️
+
+*Architecture simplifiée, déploiement automatique, réalité augmentée intégrée*

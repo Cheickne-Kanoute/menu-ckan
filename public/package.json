@@ -4,6 +4,6 @@
   "description": "CKAN Menu Restaurant Website - Static Build",
   "main": "index.html",
   "scripts": {
-    "start": "echo 'Static site - no server required'"
+    "start": "echo 'Site statique - ouvrir index.html dans un navigateur'"
   }
 }

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "CKAN Menu Restaurant Website",
   "scripts": {
-    "build": "echo 'No build step required for static site'",
-    "dev": "echo 'Use a local server like live-server or http-server'"
+    "dev": "npx live-server public",
+    "serve": "npx http-server public"
   },
   "keywords": ["restaurant", "sushi", "website"],
   "author": "CKAN",
