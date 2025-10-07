@@ -19,14 +19,17 @@ CKAN MENU est un site web professionnel pour restaurant avec :
 CKAN MENU/
 ├── 📁 public/                    # Site web complet (espace de travail)
 │   ├── 📁 assets/               # Ressources statiques
-│   │   └── 📁 images/           # Images organisées par catégorie
-│   │       ├── 📁 menu/         # Images des plats (maki, uramaki, special, sashimi)
-│   │       ├── 📁 hero/         # Images de fond des pages
-│   │       ├── 📁 cards/        # Images des cartes
-│   │       ├── 📁 about/        # Images page à propos
-│   │       └── 📁 icons/        # Icônes et logos
-│   └── 📁 pages/                # Composants
-│       └── navbar.html          # Composant navigation
+│   │   ├── 📁 images/           # Images organisées par catégorie
+│   │   │   ├── 📁 menu/         # Images des plats (maki, uramaki, special, sashimi)
+│   │   │   ├── about-card1.png  # Images des cartes
+│   │   │   ├── about-card2.png
+│   │   │   ├── about-hero.png   # Images de fond des pages
+│   │   │   ├── contact-hero.png
+│   │   │   ├── home-hero.png
+│   │   │   ├── menu-hero.png
+│   │   │   └── reservation-hero.png
+│   │   ├── 📁 icons/            # Icônes et logos
+│   │   └── 📁 models/           # Modèles 3D pour AR
 │   ├── 📁 css/                  # Styles CSS
 │   │   ├── main.css            # Styles principaux
 │   │   ├── components/
@@ -46,15 +49,14 @@ CKAN MENU/
 │   │       └── reservation.js  # Scripts page réservation
 │   ├── 📁 data/                 # Données
 │   │   └── menu-data.json      # Données du menu (JSON)
+│   ├── 📁 pages/                # Composants
+│   │   └── navbar.html          # Composant navigation
 │   ├── index.html              # Page d'accueil
 │   ├── a-propos.html           # Page à propos
 │   ├── contact.html            # Page contact
 │   ├── menu.html               # Page menu (dynamique)
 │   └── reservation.html        # Page réservation
-├── 📁 config/                   # Configuration déploiement
-│   ├── netlify.toml            # Configuration Netlify
-│   └── _redirects              # Redirections URL
-├── 📄 vercel.json              # Configuration Vercel (racine)
+├── 📄 vercel.json              # Configuration Vercel
 ├── 📄 package.json             # Configuration du projet
 └── 📄 README.md                # Ce fichier
 ```
@@ -98,11 +100,17 @@ CKAN MENU/
 
 ### 🎯 Workflow de développement
 
-**Structure simplifiée** - Tout se trouve dans le dossier `public/` :
-1. **Modifier** directement dans `public/`
+**Structure optimisée** - Architecture simplifiée sans fichiers redondants :
+1. **Modifier** directement dans `public/` (espace de travail unique)
 2. **Tester** localement avec un serveur HTTP
 3. **Commiter** : `git add . && git commit -m "Description"`
 4. **Déployer** : `git push` (déploiement automatique)
+
+**Avantages de la structure optimisée :**
+- ✅ **Pas de doublons** : Configuration unifiée
+- ✅ **Taille réduite** : Suppression des fichiers inutiles
+- ✅ **Maintenance facile** : Un seul endroit pour chaque fichier
+- ✅ **Déploiement rapide** : Structure claire pour les plateformes
 
 ## ✨ Fonctionnalités
 
@@ -227,7 +235,7 @@ Le projet est optimisé pour le déploiement statique sur plusieurs plateformes 
 2. **Configuration automatique** :
    - Dossier de publication : `public`
    - Commande de build : `echo "No build step required"`
-3. **Routage** : Géré par `config/netlify.toml` et `public/_redirects`
+3. **Routage** : Géré par `vercel.json` (URLs propres automatiques)
 4. **URLs propres** : `/menu` → `/menu.html`
 
 ### GitHub Pages
@@ -240,6 +248,8 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 - **Fichiers statiques** : HTML, CSS, JS, images
 - **Réécriture d'URL** : Pour les URLs propres (`/menu` au lieu de `/menu.html`)
 - **HTTPS** : Recommandé pour la sécurité
+
+**Note** : Pour les URLs propres, utilisez le fichier `vercel.json` comme référence pour configurer les redirections sur votre serveur.
 
 ### 🔄 Workflow de déploiement automatique
 
@@ -258,11 +268,11 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 - **Assets** : `public/assets/` - Images, icônes, modèles 3D
 - **Données** : `public/data/` - Fichier JSON du menu
 
-### 🎯 Workflow de développement simplifié
+### 🎯 Workflow de développement optimisé
 
-**Architecture unifiée** - Tout dans `public/` :
+**Architecture simplifiée** - Structure nettoyée et optimisée :
 ```
-public/                    # VOTRE ESPACE DE TRAVAIL UNIQUE
+public/                    # ESPACE DE TRAVAIL UNIQUE ET OPTIMISÉ
 ├── index.html            # Modifier directement
 ├── menu.html            # Modifier directement
 ├── css/                 # Styles organisés
@@ -270,6 +280,15 @@ public/                    # VOTRE ESPACE DE TRAVAIL UNIQUE
 ├── data/                # Données JSON
 └── assets/              # Images et ressources
 ```
+
+**Fichiers supprimés lors de l'optimisation :**
+- ❌ `config/` (dossier redondant)
+- ❌ `public/package.json` (redondant)
+- ❌ `public/netlify.toml` (redondant)
+- ❌ `public/vercel.json` (redondant)
+- ❌ `public/_redirects` (redondant)
+- ❌ `node_modules/` (inutile)
+- ❌ `package-lock.json` (inutile)
 
 ### Bonnes pratiques
 - **Modularité** : Un fichier CSS/JS par page/composant
@@ -336,6 +355,8 @@ Pour toute question ou problème :
 - **⚡ Scripts** : 5 composants JavaScript
 - **🖼️ Images** : Organisation par catégories
 - **🥽 AR** : Support modèles 3D GLB
+- **📁 Structure** : Optimisée (fichiers redondants supprimés)
+- **⚡ Performance** : Taille réduite, maintenance simplifiée
 
 ---
 

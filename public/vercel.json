@@ -1,9 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/menu", "destination": "/menu.html" },
-    { "source": "/reservation", "destination": "/reservation.html" },
-    { "source": "/a-propos", "destination": "/a-propos.html" },
-    { "source": "/contact", "destination": "/contact.html" }
-  ]
-}
