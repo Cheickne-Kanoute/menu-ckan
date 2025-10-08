@@ -71,7 +71,7 @@ function generateMenuItems(items) {
         <div class="menu-item">
             <div class="menu-item-image">
                 <img src="${item.image}" alt="${item.name}" class="item-img">
-                ${item.modelUrl ? `<div class="ar-icon" data-model-url="${item.modelUrl}" data-item-name="${item.name}">
+                ${item.modelUrl ? `<div class="ar-icon" data-model-url="${item.modelUrl}" data-ios-model-url="${item.iosModelUrl || ''}" data-item-name="${item.name}">
                     <img src="/assets/icons/view_in_ar_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="AR" class="ar-icon-svg">
                 </div>` : ''}
             </div>
@@ -220,6 +220,7 @@ function initARModal() {
     arIcons.forEach(icon => {
         icon.addEventListener('click', function() {
             const modelUrl = this.getAttribute('data-model-url');
+            const iosModelUrl = this.getAttribute('data-ios-model-url');
             const itemName = this.getAttribute('data-item-name');
             
             if (modelUrl) {
@@ -227,6 +228,7 @@ function initARModal() {
                 const newModelViewer = document.createElement('model-viewer');
                 newModelViewer.id = 'arModelViewer';
                 newModelViewer.src = modelUrl;
+                newModelViewer.setAttribute('ios-src', iosModelUrl || modelUrl); // Use iOS-specific URL if available
                 newModelViewer.setAttribute('ar', '');
                 newModelViewer.setAttribute('ar-modes', 'scene-viewer quick-look webxr');
                 newModelViewer.setAttribute('camera-controls', '');

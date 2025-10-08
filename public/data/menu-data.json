@@ -11,7 +11,8 @@
           "description": "Steak de bœuf juteux, fromage, salade, tomate et oignons dans un pain brioche frais, accompagné de frites croustillantes.",
           "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": true,
-          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb",
+          "iosModelUrl": "/assets/models/3december_2020_-_salmon_nigiri.usdz"
         },
         {
           "id": "chicken-burger",
@@ -50,7 +51,8 @@
           "description": "Demi-poulet mariné aux épices locales, grillé à la perfection et servi avec riz et légumes frais.",
           "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": true,
-          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb",
+          "iosModelUrl": "/assets/models/3december_2020_-_salmon_nigiri.usdz"
         },
         {
           "id": "grilled-fish",
@@ -127,7 +129,8 @@
           "description": "Dessert italien aux mascarpone et café, saupoudré de cacao, une douceur irrésistible.",
           "image": "/assets/images/menu/sashimi/pexels-yang-hao-10692509-1.png",
           "hasLeaf": true,
-          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb",
+          "iosModelUrl": "/assets/models/3december_2020_-_salmon_nigiri.usdz"
         },
         {
           "id": "chocolate-cake",
