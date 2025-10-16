@@ -691,7 +691,7 @@ html {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .main-wrapper {
-        padding: 6px;
+        padding: 8px;
         gap: 12px;
         width: 100vw;
         box-sizing: border-box;
