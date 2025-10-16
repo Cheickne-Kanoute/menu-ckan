@@ -492,7 +492,7 @@ html {
         font-size: 18px;
     }
     .menu-wrapper {
-        padding: 12px;
+        padding: 6px;
         gap: 12px;
         width: 100vw;
         box-sizing: border-box;
@@ -522,6 +522,10 @@ html {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+    }
+
+    .menu-item{
+        gap: 6px;
     }
     
     .menu-item-image {

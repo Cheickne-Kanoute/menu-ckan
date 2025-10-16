@@ -22,7 +22,7 @@ body {
 /* Ensure text is visible */
 .hero-title,
 .title-line,
-.button-text,
+.button-text{
     color: #EFE7D2 !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -516,7 +516,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .reservation-wrapper {
-        padding: 12px;
+        padding: 6px;
         width: 100vw;
         box-sizing: border-box;
         overflow-x: hidden;
