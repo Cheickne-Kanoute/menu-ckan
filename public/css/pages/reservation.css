@@ -552,9 +552,8 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .form-group input {
-        height: 32px;
         padding: 6px 10px;
-        font-size: 10px;
+        font-size: 12px;
     }
     
     .reservation-button {
