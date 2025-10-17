@@ -588,6 +588,8 @@ html {
 
 .ar-icon-svg {
     filter: brightness(0);
+    width: 14px;
+    height: 14px;
 }
 
 .ar-icon:hover {
@@ -714,7 +716,7 @@ html {
         top: 4px;
         right: 4px;
     }
-
+    
 }
 
 /* Small Mobile Styles */
