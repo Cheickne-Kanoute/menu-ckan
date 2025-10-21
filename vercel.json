@@ -16,5 +16,7 @@
       "source": "/reservation",
       "destination": "/reservation.html"
     }
-  ]
+  ],
+  "trailingSlash": false,
+  "cleanUrls": true
 }
