@@ -2,19 +2,19 @@
   "rewrites": [
     {
       "source": "/a-propos",
-      "destination": "/public/a-propos.html"
+      "destination": "/a-propos.html"
     },
     {
       "source": "/contact",
-      "destination": "/public/contact.html"
+      "destination": "/contact.html"
     },
     {
       "source": "/menu",
-      "destination": "/public/menu.html"
+      "destination": "/menu.html"
     },
     {
       "source": "/reservation",
-      "destination": "/public/reservation.html"
+      "destination": "/reservation.html"
     }
   ]
 }
