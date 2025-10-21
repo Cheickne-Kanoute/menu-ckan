@@ -477,3 +477,9 @@
         border: 1px solid rgba(239, 231, 210, 0.15);
     }
 }
+
+@media (max-width: 481px){
+    #nav-menu, #nav-about{
+        display: none;
+    }
+}
