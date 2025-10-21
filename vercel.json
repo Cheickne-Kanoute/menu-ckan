@@ -13,10 +13,6 @@
   ],
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
       "source": "/a-propos",
       "destination": "/a-propos.html"
     },
