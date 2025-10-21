@@ -1,20 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "public/**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
+  "public": true,
+  "rewrites": [
     {
-      "src": "^/$",
-      "dest": "/public/index.html"
+      "source": "/a-propos",
+      "destination": "/a-propos.html"
     },
     {
-      "src": "^/([^/]+)/?$",
-      "dest": "/public/$1.html"
+      "source": "/contact",
+      "destination": "/contact.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "source": "/menu",
+      "destination": "/menu.html"
+    },
+    {
+      "source": "/reservation",
+      "destination": "/reservation.html"
     }
   ]
 }
