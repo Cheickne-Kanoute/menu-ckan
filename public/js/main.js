@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuLines = document.querySelectorAll('.menu-line');
     
-    menuToggle.addEventListener('click', function() {
+    // Vérifier que l'élément existe avant d'ajouter l'event listener
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
         menuLines.forEach((line, index) => {
             line.style.transform = `rotate(${45 + index * 90}deg) translate(${index === 1 ? '0' : '0'}, ${index === 1 ? '0' : '0'})`;
             line.style.transition = 'all 0.3s ease';
@@ -44,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 line.style.transform = 'none';
             });
         }, 300);
-    });
+        });
+    }
 
     // Effet de parallaxe sur l'image hero
     const heroImage = document.querySelector('.hero-img');
@@ -100,7 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const socialIcons = document.querySelectorAll('.social-icon');
     const socialCard = document.querySelector('.social-card');
     
-    socialIcons.forEach((icon, index) => {
+    // Vérifier que les éléments existent avant d'ajouter les event listeners
+    if (socialIcons.length > 0) {
+        socialIcons.forEach((icon, index) => {
         // Animation d'entrée séquentielle
         icon.style.opacity = '0';
         icon.style.transform = 'scale(0.8) translateY(20px)';
@@ -147,7 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.addEventListener('mouseup', function() {
             this.style.transform = 'translateY(-3px) scale(1.1)';
         });
-    });
+        });
+    }
 
     // Animation du bloc social au hover
     if (socialCard) {
@@ -170,7 +176,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const titleLines = heroTitle.querySelectorAll('.title-line');
-        titleLines.forEach((line, index) => {
+        if (titleLines.length > 0) {
+            titleLines.forEach((line, index) => {
             line.style.opacity = '0';
             line.style.transform = 'translateY(50px)';
             
@@ -179,7 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 line.style.opacity = '1';
                 line.style.transform = 'translateY(0)';
             }, index * 200);
-        });
+            });
+        }
     }
 
     // Effet de typing pour le titre
@@ -273,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const navMenu = document.querySelector('.nav-menu');
         const isMobile = window.innerWidth <= 768;
         
-        if (isMobile) {
+        if (isMobile && menuToggle && navMenu) {
             menuToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('mobile-active');
             });
