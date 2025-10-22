@@ -53,10 +53,9 @@ class NavbarComponent {
             
             for (const url of candidates) {
                 try {
-                    // Reduced logs: only log the successful source
+                    // Reduced logs: only log errors at the end
                     response = await fetch(url);
                     if (response.ok) {
-                        console.log(`✅ Successfully loaded navbar from: ${url}`);
                         break;
                     }
                 } catch (error) {
@@ -78,17 +77,13 @@ class NavbarComponent {
             
             if (this.navbarContainer) {
                 // Replace existing navbar
-                console.log('🔄 Replacing existing navbar');
                 this.navbarContainer.outerHTML = navbarHTML;
                 this.navbarContainer = document.querySelector('.navbar');
             } else {
                 // Insert navbar at the beginning of body
-                console.log('➕ Inserting navbar at beginning of body');
                 document.body.insertAdjacentHTML('afterbegin', navbarHTML);
                 this.navbarContainer = document.querySelector('.navbar');
             }
-            
-            console.log('📋 Navbar container found:', this.navbarContainer);
         } catch (error) {
             console.error('Error loading navbar HTML:', error);
         }
