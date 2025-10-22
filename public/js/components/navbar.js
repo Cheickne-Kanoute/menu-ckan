@@ -40,23 +40,36 @@ class NavbarComponent {
         try {
             // Try multiple paths to work in local file preview and on Vercel
             const candidates = [
-                '/pages/navbar',
-                '/pages/navbar.html',
-                'pages/navbar',
-                'pages/navbar.html'
+                '/components/navbar.html',
+                '/components/navbar',
+                'components/navbar.html',
+                'components/navbar',
+                './components/navbar.html',
+                '../components/navbar.html'
             ];
 
             let response = null;
+            let lastError = null;
+            
             for (const url of candidates) {
                 try {
+                    console.log(`Trying to load navbar from: ${url}`);
                     response = await fetch(url);
-                    if (response.ok) break;
-                } catch (_) {
-                    // ignore and try next candidate
+                    if (response.ok) {
+                        console.log(`✅ Successfully loaded navbar from: ${url}`);
+                        break;
+                    } else {
+                        console.log(`❌ Failed to load navbar from: ${url} (status: ${response.status})`);
+                    }
+                } catch (error) {
+                    console.log(`❌ Error loading navbar from: ${url}`, error);
+                    lastError = error;
                 }
             }
 
             if (!response || !response.ok) {
+                console.error(`❌ Unable to load navbar from any of: ${candidates.join(', ')}`);
+                console.error('Last error:', lastError);
                 throw new Error(`Unable to load navbar from: ${candidates.join(', ')}`);
             }
             const navbarHTML = await response.text();
@@ -68,13 +81,17 @@ class NavbarComponent {
             
             if (this.navbarContainer) {
                 // Replace existing navbar
+                console.log('🔄 Replacing existing navbar');
                 this.navbarContainer.outerHTML = navbarHTML;
                 this.navbarContainer = document.querySelector('.navbar');
             } else {
                 // Insert navbar at the beginning of body
+                console.log('➕ Inserting navbar at beginning of body');
                 document.body.insertAdjacentHTML('afterbegin', navbarHTML);
                 this.navbarContainer = document.querySelector('.navbar');
             }
+            
+            console.log('📋 Navbar container found:', this.navbarContainer);
         } catch (error) {
             console.error('Error loading navbar HTML:', error);
         }
