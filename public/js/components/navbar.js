@@ -38,9 +38,26 @@ class NavbarComponent {
 
     async loadNavbar() {
         try {
-            const response = await fetch('/pages/navbar.html');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Try multiple paths to work in local file preview and on Vercel
+            const candidates = [
+                '/pages/navbar',
+                '/pages/navbar.html',
+                'pages/navbar',
+                'pages/navbar.html'
+            ];
+
+            let response = null;
+            for (const url of candidates) {
+                try {
+                    response = await fetch(url);
+                    if (response.ok) break;
+                } catch (_) {
+                    // ignore and try next candidate
+                }
+            }
+
+            if (!response || !response.ok) {
+                throw new Error(`Unable to load navbar from: ${candidates.join(', ')}`);
             }
             const navbarHTML = await response.text();
             
