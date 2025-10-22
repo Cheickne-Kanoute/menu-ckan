@@ -40,10 +40,10 @@ class NavbarComponent {
         try {
             // Try multiple paths to work in local file preview and on Vercel
             const candidates = [
-                '/components/navbar.html',
                 '/components/navbar',
-                'components/navbar.html',
                 'components/navbar',
+                '/components/navbar.html',
+                'components/navbar.html',
                 './components/navbar.html',
                 '../components/navbar.html'
             ];
@@ -53,23 +53,20 @@ class NavbarComponent {
             
             for (const url of candidates) {
                 try {
-                    console.log(`Trying to load navbar from: ${url}`);
+                    // Reduced logs: only log the successful source
                     response = await fetch(url);
                     if (response.ok) {
                         console.log(`✅ Successfully loaded navbar from: ${url}`);
                         break;
-                    } else {
-                        console.log(`❌ Failed to load navbar from: ${url} (status: ${response.status})`);
                     }
                 } catch (error) {
-                    console.log(`❌ Error loading navbar from: ${url}`, error);
                     lastError = error;
                 }
             }
 
             if (!response || !response.ok) {
                 console.error(`❌ Unable to load navbar from any of: ${candidates.join(', ')}`);
-                console.error('Last error:', lastError);
+                if (lastError) console.error('Last error:', lastError);
                 throw new Error(`Unable to load navbar from: ${candidates.join(', ')}`);
             }
             const navbarHTML = await response.text();
