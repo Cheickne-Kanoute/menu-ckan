@@ -41,8 +41,9 @@ CKAN MENU/
 │   │       └── reservation.css # Styles page réservation
 │   ├── 📁 js/                   # Scripts JavaScript
 │   │   ├── main.js             # Script principal
-│   │   └── components/
-│   │       ├── navbar.js       # Fonctionnalité navigation
+│   │   ├── components/
+│   │   │   └── navbar.js       # Fonctionnalité navigation
+│   │   └── pages/
 │   │       ├── a-propos.js     # Scripts page à propos
 │   │       ├── contact.js      # Scripts page contact
 │   │       ├── menu.js         # Scripts page menu (dynamique)
@@ -259,12 +260,35 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 4. **Déploiement automatique** : Vercel/Netlify détecte les changements
 5. **Site mis à jour** : En quelques secondes
 
+## 🔧 Corrections et optimisations récentes
+
+### ✅ Structure JavaScript corrigée
+- **Organisation modulaire** : Séparation claire entre `components/` et `pages/`
+- **Chemins corrigés** : Tous les chemins JavaScript mis à jour dans les fichiers HTML
+- **Structure finale** :
+  ```
+  js/
+  ├── main.js
+  ├── components/
+  │   └── navbar.js
+  └── pages/
+      ├── a-propos.js
+      ├── contact.js
+      ├── menu.js
+      └── reservation.js
+  ```
+
+### ✅ Corrections apportées
+- **Chemins HTML** : Mise à jour de `/js/components/` vers `/js/pages/` pour les scripts de pages
+- **Cohérence** : Structure alignée entre CSS (`pages/`) et JavaScript (`pages/`)
+- **Maintenance** : Organisation claire pour faciliter la maintenance
+
 ## 📚 Développement
 
 ### Structure du code
 - **Pages HTML** : `public/` (racine) - Toutes les pages principales
 - **Styles CSS** : `public/css/` avec fichiers séparés par composants et pages
-- **Scripts JS** : `public/js/` avec organisation modulaire par composants
+- **Scripts JS** : `public/js/` avec organisation modulaire (components/ et pages/)
 - **Assets** : `public/assets/` - Images, icônes, modèles 3D
 - **Données** : `public/data/` - Fichier JSON du menu
 
@@ -275,8 +299,8 @@ Uploader le contenu du dossier `public` sur tout serveur web supportant :
 public/                    # ESPACE DE TRAVAIL UNIQUE ET OPTIMISÉ
 ├── index.html            # Modifier directement
 ├── menu.html            # Modifier directement
-├── css/                 # Styles organisés
-├── js/                  # Scripts modulaires
+├── css/                 # Styles organisés (components/ et pages/)
+├── js/                  # Scripts modulaires (components/ et pages/)
 ├── data/                # Données JSON
 └── assets/              # Images et ressources
 ```
@@ -351,11 +375,11 @@ Pour toute question ou problème :
 
 - **📄 Pages** : 5 pages principales
 - **🍽️ Plats** : 28 plats dans 7 catégories
-- **🎨 Styles** : 4 fichiers CSS modulaires
-- **⚡ Scripts** : 5 composants JavaScript
+- **🎨 Styles** : 4 fichiers CSS modulaires (components/ et pages/)
+- **⚡ Scripts** : 5 composants JavaScript (components/ et pages/)
 - **🖼️ Images** : Organisation par catégories
 - **🥽 AR** : Support modèles 3D GLB
-- **📁 Structure** : Optimisée (fichiers redondants supprimés)
+- **📁 Structure** : Optimisée avec organisation modulaire
 - **⚡ Performance** : Taille réduite, maintenance simplifiée
 
 ---
