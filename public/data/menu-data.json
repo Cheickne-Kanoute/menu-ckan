@@ -9,7 +9,6 @@
           "name": "Burger Classique",
           "price": "4500 FCFA",
           "description": "Steak de bœuf juteux, fromage, salade, tomate et oignons dans un pain brioche frais, accompagné de frites croustillantes.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": true,
           "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
@@ -18,7 +17,6 @@
           "name": "Burger Poulet",
           "price": "4000 FCFA",
           "description": "Filet de poulet grillé, fromage, salade fraîche et sauce spéciale dans un pain artisanal, servi avec des frites dorées.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         },
         {
@@ -26,7 +24,6 @@
           "name": "Burger Poisson",
           "price": "3500 FCFA",
           "description": "Filet de poisson frais pané, salade, tomate et sauce tartare dans un pain brioche, accompagné de frites.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         },
         {
@@ -34,7 +31,6 @@
           "name": "Burger Végétarien",
           "price": "3000 FCFA",
           "description": "Steak végétal aux légumes, fromage, salade et tomate dans un pain complet, parfait pour les végétariens.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         }
       ]
@@ -48,7 +44,6 @@
           "name": "Poulet Grillé",
           "price": "5500 FCFA",
           "description": "Demi-poulet mariné aux épices locales, grillé à la perfection et servi avec riz et légumes frais.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": true,
           "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
@@ -57,7 +52,6 @@
           "name": "Poisson Grillé",
           "price": "6000 FCFA",
           "description": "Poisson frais du jour grillé aux herbes, servi avec attiéké et sauce tomate épicée.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         },
         {
@@ -65,7 +59,6 @@
           "name": "Bœuf Grillé",
           "price": "7000 FCFA",
           "description": "Entrecôte de bœuf grillée aux épices, accompagnée de frites et salade verte fraîche.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         },
         {
@@ -73,7 +66,6 @@
           "name": "Agneau Grillé",
           "price": "8000 FCFA",
           "description": "Côtelettes d'agneau marinées et grillées, servies avec riz pilaf et légumes de saison.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         }
       ]
@@ -87,32 +79,32 @@
           "name": "Thieboudienne",
           "price": "4500 FCFA",
           "description": "Riz au poisson traditionnel sénégalais, préparé avec légumes frais et épices authentiques.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "yassa-chicken",
           "name": "Yassa Poulet",
           "price": "4000 FCFA",
           "description": "Poulet mariné dans une sauce à l'oignon et citron, servi avec riz blanc et légumes.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "mafe",
           "name": "Mafé",
           "price": "3500 FCFA",
           "description": "Ragoût de viande aux légumes dans une sauce à la pâte d'arachide, servi avec riz.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "couscous",
           "name": "Couscous",
           "price": "3000 FCFA",
           "description": "Couscous aux légumes et viande, parfumé aux épices et accompagné de bouillon de légumes.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         }
       ]
     },
@@ -125,7 +117,6 @@
           "name": "Tiramisu",
           "price": "2500 FCFA",
           "description": "Dessert italien aux mascarpone et café, saupoudré de cacao, une douceur irrésistible.",
-          "image": "/assets/images/menu/sashimi/pexels-yang-hao-10692509-1.png",
           "hasLeaf": true,
           "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
@@ -134,15 +125,14 @@
           "name": "Gâteau au Chocolat",
           "price": "2000 FCFA",
           "description": "Gâteau au chocolat fondant, servi avec une boule de glace vanille et coulis de fruits rouges.",
-          "image": "/assets/images/menu/sashimi/pexels-yang-hao-10692509-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "fruit-salad",
           "name": "Salade de Fruits",
           "price": "1500 FCFA",
           "description": "Assortiment de fruits frais de saison, parfait pour terminer le repas en douceur.",
-          "image": "/assets/images/menu/sashimi/pexels-yang-hao-10692509-1.png",
           "hasLeaf": false
         },
         {
@@ -150,8 +140,8 @@
           "name": "Glaces",
           "price": "1000 FCFA",
           "description": "Boules de glace artisanale aux parfums variés : vanille, chocolat, fraise et pistache.",
-          "image": "/assets/images/menu/sashimi/pexels-yang-hao-10692509-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         }
       ]
     },
@@ -164,15 +154,14 @@
           "name": "Pizza Margherita",
           "price": "4000 FCFA",
           "description": "Pizza classique avec sauce tomate, mozzarella fraîche et basilic, cuite au feu de bois.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "pepperoni",
           "name": "Pizza Pepperoni",
           "price": "4500 FCFA",
           "description": "Pizza garnie de pepperoni, mozzarella et sauce tomate, parfaite pour les amateurs de viande.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         },
         {
@@ -180,7 +169,6 @@
           "name": "Pizza Poulet",
           "price": "5000 FCFA",
           "description": "Pizza au poulet grillé, champignons, oignons et fromage, une combinaison savoureuse.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         },
         {
@@ -188,7 +176,6 @@
           "name": "Pizza Végétarienne",
           "price": "3500 FCFA",
           "description": "Pizza aux légumes frais : tomates, poivrons, oignons, olives et fromage mozzarella.",
-          "image": "/assets/images/menu/maki/pexels-yang-hao-10692500-1.png",
           "hasLeaf": false
         }
       ]
@@ -202,15 +189,14 @@
           "name": "Spaghetti Bolognaise",
           "price": "3500 FCFA",
           "description": "Spaghetti avec sauce bolognaise à la viande hachée, parmesan et herbes fraîches.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "carbonara",
           "name": "Pâtes Carbonara",
           "price": "4000 FCFA",
           "description": "Pâtes crémeuses aux lardons, œufs, parmesan et poivre noir, un classique italien.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         },
         {
@@ -218,7 +204,6 @@
           "name": "Pâtes au Poulet",
           "price": "4500 FCFA",
           "description": "Pâtes avec poulet grillé, légumes frais et sauce crémeuse aux herbes.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         },
         {
@@ -226,7 +211,6 @@
           "name": "Pâtes aux Fruits de Mer",
           "price": "5500 FCFA",
           "description": "Pâtes aux fruits de mer frais, tomates, ail et persil, un délice marin.",
-          "image": "/assets/images/menu/uramaki/pexels-yang-hao-10692517-1.png",
           "hasLeaf": false
         }
       ]
@@ -240,15 +224,14 @@
           "name": "Jus de Fruits Frais",
           "price": "1500 FCFA",
           "description": "Jus de fruits pressés : orange, mangue, ananas ou papaye, rafraîchissants et naturels.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
-          "hasLeaf": true
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
         },
         {
           "id": "smoothie",
           "name": "Smoothies",
           "price": "2000 FCFA",
           "description": "Smoothies aux fruits tropicaux : banane-mangue, fraise-banane ou fruits rouges.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
           "hasLeaf": false
         },
         {
@@ -256,7 +239,6 @@
           "name": "Café",
           "price": "1000 FCFA",
           "description": "Café local torréfié, servi chaud ou glacé, avec ou sans lait.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
           "hasLeaf": false
         },
         {
@@ -264,7 +246,78 @@
           "name": "Boissons Gazeuses",
           "price": "800 FCFA",
           "description": "Coca-Cola, Fanta, Sprite et autres boissons rafraîchissantes.",
-          "image": "/assets/images/menu/special/pexels-yang-hao-10692510-1.png",
+          "hasLeaf": false
+        }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Salades",
+      "items": [
+        {
+          "id": "caesar-salad",
+          "name": "Salade César",
+          "price": "3500 FCFA",
+          "description": "Salade fraîche aux feuilles de romaine, croûtons, parmesan et sauce césar maison.",
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+        },
+        {
+          "id": "greek-salad",
+          "name": "Salade Grecque",
+          "price": "4000 FCFA",
+          "description": "Salade aux tomates, concombres, olives, feta et oignons rouges, arrosée d'huile d'olive.",
+          "hasLeaf": false
+        },
+        {
+          "id": "chicken-salad",
+          "name": "Salade au Poulet",
+          "price": "4500 FCFA",
+          "description": "Salade mixte avec poulet grillé, légumes croquants et vinaigrette à la moutarde.",
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+        },
+        {
+          "id": "tuna-salad",
+          "name": "Salade au Thon",
+          "price": "4000 FCFA",
+          "description": "Salade fraîche avec thon grillé, œufs durs, tomates et haricots verts.",
+          "hasLeaf": false
+        }
+      ]
+    },
+    {
+      "id": "starters",
+      "name": "Entrées",
+      "items": [
+        {
+          "id": "chicken-wings",
+          "name": "Ailes de Poulet",
+          "price": "4500 FCFA",
+          "description": "Ailes de poulet marinées et grillées, servies avec sauce au choix : barbecue, épicée ou miel.",
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+        },
+        {
+          "id": "mozzarella-sticks",
+          "name": "Bâtonnets de Mozzarella",
+          "price": "3500 FCFA",
+          "description": "Bâtonnets de mozzarella panés et frits, servis avec sauce tomate chaude.",
+          "hasLeaf": false
+        },
+        {
+          "id": "spring-rolls",
+          "name": "Nems aux Légumes",
+          "price": "3000 FCFA",
+          "description": "Nems croustillants aux légumes, servis avec sauce aigre-douce et menthe fraîche.",
+          "hasLeaf": true,
+          "modelUrl": "/assets/models/3december_2020_-_salmon_nigiri.glb"
+        },
+        {
+          "id": "chicken-skewers",
+          "name": "Brochettes de Poulet",
+          "price": "5000 FCFA",
+          "description": "Brochettes de poulet mariné aux épices, grillées et servies avec légumes et sauce piquante.",
           "hasLeaf": false
         }
       ]

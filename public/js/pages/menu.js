@@ -69,16 +69,13 @@ function generateMenuSections(categories) {
 function generateMenuItems(items) {
     return items.map(item => `
         <div class="menu-item">
-            <div class="menu-item-image">
-                <img src="${item.image}" alt="${item.name}" class="item-img">
-                ${item.modelUrl ? `<div class="ar-icon" data-model-url="${item.modelUrl}" data-item-name="${item.name}">
-                    <img src="/assets/icons/view_in_ar_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="AR" class="ar-icon-svg">
-                </div>` : ''}
-            </div>
             <div class="menu-item-content">
                 <div class="item-header">
                     <div class="item-name-container">
                         <h3 class="item-name">${item.name}</h3>
+                        ${item.modelUrl ? `<div class="ar-icon" data-model-url="${item.modelUrl}" data-item-name="${item.name}">
+                            <img src="/assets/icons/view_in_ar_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="AR" class="ar-icon-svg">
+                        </div>` : ''}
                     </div>
                     <div class="item-dots"></div>
                     <div class="item-price">${item.price}</div>
@@ -91,9 +88,29 @@ function generateMenuItems(items) {
 
 // Initialize menu with data
 async function initMenu() {
+    // Show loader
+    const loader = document.getElementById('menuLoader');
+    const filterTabs = document.querySelector('.menu-filter-tabs');
+    const menuSections = document.querySelector('.menu-sections');
+    
+    if (loader) {
+        loader.style.display = 'flex';
+    }
+    
+    // Hide tabs and sections initially
+    if (filterTabs) {
+        filterTabs.classList.remove('loaded');
+    }
+    if (menuSections) {
+        menuSections.classList.remove('loaded');
+    }
+    
     const data = await loadMenuData();
     if (!data) {
         console.error('Failed to load menu data');
+        if (loader) {
+            loader.style.display = 'none';
+        }
         return;
     }
 
@@ -106,6 +123,19 @@ async function initMenu() {
     
     // Initialize AR functionality
     initARModal();
+    
+    // Hide loader and show content with loaded class
+    if (loader) {
+        loader.style.display = 'none';
+    }
+    
+    // Add loaded class to tabs and sections
+    if (filterTabs) {
+        filterTabs.classList.add('loaded');
+    }
+    if (menuSections) {
+        menuSections.classList.add('loaded');
+    }
 }
 
 // Menu Filter Functionality
